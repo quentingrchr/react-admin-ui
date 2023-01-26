@@ -1,0 +1,133 @@
+import { Meta, Typeset } from "@storybook/addon-docs/blocks";
+
+import theme from "../../shared/styles/theme";
+import { dummyText as dummy } from "../../const/index";
+
+<Meta title="Design Tokens/Typography" />
+
+# Typography
+
+**Font-Family:** Inter, -apple-system, Helvetica, Arial, sans-serif
+
+**Weights:** thin(100), light(300), regular(400), medium(500), semiBold(600), bold(700)
+
+### Heading
+
+<Typeset
+  fontFamily={theme.font.family}
+  fontSizes={[
+    theme.font.size.h1,
+    theme.font.size.h2,
+    theme.font.size.h3,
+    theme.font.size.h4,
+    theme.font.size.h5,
+  ]}
+  fontWeight={theme.font.weight.semiBold}
+  sampleText={"Heading"}
+/>
+
+### Subtitle
+
+<Typeset
+  fontFamily={theme.font.family}
+  fontSizes={[theme.font.size.subtitle]}
+  fontWeight={theme.font.weight.regular}
+  sampleText={"This is a subtitle"}
+/>
+
+### Body primary
+
+<Typeset
+  fontFamily={theme.font.family}
+  fontSizes={[theme.font.size.body1]}
+  fontWeight={theme.font.weight.regular}
+  sampleText={"This is a regular text"}
+/>
+
+<Typeset
+  fontFamily={theme.font.family}
+  fontSizes={[theme.font.size.body1]}
+  fontWeight={theme.font.weight.semiBold}
+  sampleText={"This is a semi-bold text"}
+/>
+
+<Typeset
+  fontFamily={theme.font.family}
+  fontSizes={[theme.font.size.body1]}
+  fontWeight={theme.font.weight.bold}
+  sampleText={"This is a bold text"}
+/>
+
+### Body secondary
+
+<Typeset
+  fontFamily={theme.font.family}
+  fontSizes={[theme.font.size.body2]}
+  fontWeight={theme.font.weight.regular}
+  sampleText={"This is a regular secondary text"}
+/>
+
+<Typeset
+  fontFamily={theme.font.family}
+  fontSizes={[theme.font.size.body2]}
+  fontWeight={theme.font.weight.semiBold}
+  sampleText={"This is a semi-bold secondary text"}
+/>
+
+<Typeset
+  fontFamily={theme.font.family}
+  fontSizes={[theme.font.size.body2]}
+  fontWeight={theme.font.weight.bold}
+  sampleText={"This is a bold secondary text"}
+/>
+
+<Typeset
+  fontFamily={theme.font.family}
+  fontSizes={[theme.font.size.body2]}
+  fontWeight={theme.font.weight.regular}
+  sampleText={"THIS IS ALL CAPS REGULAR SECONDARY TEXT"}
+/>
+
+<Typeset
+  fontFamily={theme.font.family}
+  fontSizes={[theme.font.size.body2]}
+  fontWeight={theme.font.weight.bold}
+  sampleText={"THIS IS ALL CAPS BOLD SECONDARY TEXT"}
+/>
+
+### Body tertiary
+
+<Typeset
+  fontFamily={theme.font.family}
+  fontSizes={[theme.font.size.body3]}
+  fontWeight={theme.font.weight.regular}
+  sampleText={"This is a regular tertiary text"}
+/>
+
+<Typeset
+  fontFamily={theme.font.family}
+  fontSizes={[theme.font.size.body3]}
+  fontWeight={theme.font.weight.semiBold}
+  sampleText={"This is a semi-bold tertiary text"}
+/>
+
+<Typeset
+  fontFamily={theme.font.family}
+  fontSizes={[theme.font.size.body3]}
+  fontWeight={theme.font.weight.bold}
+  sampleText={"This is a bold tertiary text"}
+/>
+
+<Typeset
+  fontFamily={theme.font.family}
+  fontSizes={[theme.font.size.body3]}
+  fontWeight={theme.font.weight.regular}
+  sampleText={"THIS IS ALL CAPS REGULAR TERTIARY TEXT"}
+/>
+
+<Typeset
+  fontFamily={theme.font.family}
+  fontSizes={[theme.font.size.body3]}
+  fontWeight={theme.font.weight.bold}
+  sampleText={"THIS IS ALL CAPS BOLD TERTIARY TEXT"}
+/>
