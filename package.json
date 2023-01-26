@@ -47,9 +47,8 @@
     "prepublishOnly": "npm run build",
     "build": "rollup -c --bundleConfigAsCjs",
     "storybook": "start-storybook -p 6006",
-    "storybook:build": "build-storybook",
-    "storybook:deploy": "storybook-to-ghpages",
-    "build-storybook": "build-storybook"
+    "storybook:build": "build-storybook -s public",
+    "storybook:serve": "serve storybook-static"
   },
   "eslintConfig": {
     "extends": [
