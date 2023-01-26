@@ -4,5 +4,8 @@ module.exports = {
   "framework": "@storybook/react",
   core: {
     builder: "webpack5"
-  }
+  },
+  features: {
+    previewMdx2: true,
+  },
 };
