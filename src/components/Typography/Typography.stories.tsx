@@ -1,16 +1,86 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 
-import { dummy } from "../../shared/styles";
-import Typography, { IProps } from "./Typography";
+import { dummyText } from "../../const/index";
+import Typography, { IProps, VariantTypes } from "./Typography.component";
+const variantsParameterOptions: IProps["variant"][] = [
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "subtitle",
+  "body1",
+  "body2",
+  "body3",
+];
+const componentsParameterOptions: IProps["component"][] = [
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "strong",
+  "p",
+  "span",
+  "div",
+  "a",
+];
+
+const weightParameterOptions: IProps["weight"][] = [
+  "thin",
+  "light",
+  "regular",
+  "medium",
+  "semiBold",
+  "bold",
+];
 
 export default {
-  title: "Design System/Typography",
+  title: "Atoms/Typography",
   component: Typography,
+  parameters: {
+    layout: "centered",
+  },
+  argTypes: {
+    variant: {
+      defaultValue: "body1",
+      description: "Apply the theme typography styles",
+      control: {
+        type: "select",
+        options: variantsParameterOptions,
+      },
+    },
+    component: {
+      defaultValue: "p",
+      description: "The HTML Tag of the component",
+      control: {
+        type: "select",
+        options: componentsParameterOptions,
+      },
+    },
+    weight: {
+      defaultValue: "regular",
+      description: "The typography weight",
+      control: {
+        type: "select",
+        options: weightParameterOptions,
+      },
+    },
+    uppercase: {
+      defaultValue: false,
+      description: "Set the text to uppercase",
+    },
+    italic: {
+      defaultValue: false,
+      description: "Set the text to italic",
+    },
+  },
 } as Meta;
 
 const Template: Story<IProps> = (args) => (
-  <Typography {...args} children={dummy.sampleText} />
+  <Typography {...args} children={dummyText} />
 );
 
 export const h1 = Template.bind({});
@@ -43,60 +113,100 @@ h5.args = {
   component: "h5",
 } as IProps;
 
-export const h6 = Template.bind({});
-h6.args = {
-  variant: "h6",
+export const subtitle = Template.bind({});
+subtitle.args = {
+  variant: "subtitle",
   component: "h6",
 } as IProps;
 
-export const s1 = Template.bind({});
-s1.args = {
-  variant: "s1",
-  component: "strong",
+export const body1Regular = Template.bind({});
+body1Regular.args = {
+  variant: "body1",
+  component: "p",
 } as IProps;
 
-export const s2 = Template.bind({});
-s2.args = {
-  variant: "s2",
-  component: "strong",
+export const body1SemiBold = Template.bind({});
+body1SemiBold.args = {
+  variant: "body1",
+  component: "p",
+  weight: "semiBold",
 } as IProps;
 
-export const b1 = Template.bind({});
-b1.args = {
-  variant: "b1",
-  component: "div",
-} as IProps;
-export const b2 = Template.bind({});
-b2.args = {
-  variant: "b2",
-  component: "div",
-} as IProps;
-export const link = Template.bind({});
-link.args = {
-  variant: "link",
-  component: "a",
+export const body1Bold = Template.bind({});
+body1Bold.args = {
+  variant: "body1",
+  component: "p",
+  weight: "bold",
 } as IProps;
 
-export const bt1 = Template.bind({});
-bt1.args = {
-  variant: "bt1",
-  component: "span",
+export const body1Italic = Template.bind({});
+body1Italic.args = {
+  variant: "body1",
+  component: "p",
+  italic: true,
 } as IProps;
 
-export const bt2 = Template.bind({});
-bt2.args = {
-  variant: "bt2",
-  component: "span",
+export const body2Regular = Template.bind({});
+body2Regular.args = {
+  variant: "body2",
+  component: "p",
 } as IProps;
 
-export const cp = Template.bind({});
-cp.args = {
-  variant: "cp",
-  component: "span",
+export const body2SemiBold = Template.bind({});
+body2SemiBold.args = {
+  variant: "body2",
+  component: "p",
+  weight: "semiBold",
 } as IProps;
 
-export const ol = Template.bind({});
-ol.args = {
-  variant: "ol",
-  component: "span",
+export const body2Bold = Template.bind({});
+body2Bold.args = {
+  variant: "body2",
+  component: "p",
+  weight: "bold",
+} as IProps;
+
+export const body2Upper = Template.bind({});
+body2Upper.args = {
+  variant: "body2",
+  component: "p",
+  uppercase: true,
+} as IProps;
+
+export const body2UpperBold = Template.bind({});
+body2UpperBold.args = {
+  variant: "body2",
+  component: "p",
+  uppercase: true,
+  weight: "bold",
+} as IProps;
+
+export const body3SemiBold = Template.bind({});
+body3SemiBold.args = {
+  variant: "body3",
+  component: "p",
+  weight: "semiBold",
+} as IProps;
+
+export const body3Bold = Template.bind({});
+body3Bold.args = {
+  variant: "body3",
+  component: "p",
+  weight: "bold",
+} as IProps;
+
+export const body3UpperSemibold = Template.bind({});
+body3UpperSemibold.args = {
+  variant: "body3",
+  component: "p",
+  uppercase: true,
+  weight: "semiBold",
+} as IProps;
+
+export const body3UpperBold = Template.bind({});
+body3UpperBold.args = {
+  variant: "body3",
+  component: "p",
+  uppercase: true,
+  weight: "bold",
 } as IProps;

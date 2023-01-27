@@ -1,5 +1,12 @@
 import { createGlobalStyle, css } from "styled-components";
-
+import InnerTTF from "../../assets/fonts/inner/Inter-VariableFont_slnt,wght.ttf";
+const fonts = css`
+  @font-face {
+    font-family: "Inter";
+    src: url(${InnerTTF}) format("truetype");
+    font-style: normal;
+  }
+`;
 const reset = css`
   html,
   body,
@@ -128,5 +135,6 @@ const reset = css`
 `;
 const GlobalStyle = createGlobalStyle`
   ${reset}
+  ${fonts}
 `;
 export default GlobalStyle;

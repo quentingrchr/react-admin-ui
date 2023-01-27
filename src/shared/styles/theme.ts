@@ -1,12 +1,15 @@
-function remToPx(rem: string) {
+import { DefaultTheme } from "styled-components";
+
+function remToPx(rem: string): number {
   const BASE_FONT_SIZE = 10;
   const remValue = parseFloat(rem);
   return remValue * BASE_FONT_SIZE;
 }
-export default {
+
+const theme: DefaultTheme = {
   font: {
     family: {
-      primary: "Inter, -apple-system, Helvetica, Arial, sans-serif",
+      primary: "Inter, Arial, sans-serif",
     },
     size: {
       h1: remToPx("6.4rem"),
@@ -63,4 +66,6 @@ export default {
       hoverDestroyPressed: "#ce0000",
     },
   },
-} as const;
+};
+
+export default theme;

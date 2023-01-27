@@ -1,2 +1,1 @@
-export const dummyText =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+export const dummyText = "Lorem ipsum dolor sit amet";
