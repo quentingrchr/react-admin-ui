@@ -41,7 +41,7 @@ const colorsParameterOptions: IProps["color"][] = [
   "primary-black",
   "primary-white",
   "primary-brand",
-  "secondary-error",
+  "secondary-danger",
   "secondary-success",
   "secondary-neutral1",
   "secondary-neutral2",

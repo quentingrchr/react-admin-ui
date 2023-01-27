@@ -9,16 +9,16 @@ export type ThemeColorsMap = {
     neutral2: string;
     neutral3: string;
     neutral4: string;
-    error: string;
+    danger: string;
     success: string;
   };
   tertiary: {
     hover1: string;
     pressed: string;
     bgSuccess: string;
-    bgError: string;
+    bgDanger: string;
     bgBrand: string;
     hoverDestroy: string;
-    hoverDestroyPressed: string;
+    pressedDestroy: string;
   };
 };

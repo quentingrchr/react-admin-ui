@@ -51,7 +51,7 @@ const Typography: React.FC<IProps> = (props) => {
       as={component}
       variant={variant}
       weight={appliedWeight}
-      color={color ? color : "primary-black"}
+      // color={color ? color : "primary-black"}
       {...other}
     >
       {children}

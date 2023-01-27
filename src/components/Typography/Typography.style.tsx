@@ -13,12 +13,10 @@ function getColorFromColorStringInterpolation(
 export const Container = styled.div<{
   variant: VariantTypes;
   weight: ThemeWeight;
-  color: ColorStringInterpolation;
+  // color: ColorStringInterpolation;
   uppercase?: boolean;
   italic?: boolean;
 }>`
-  color: ${(props) =>
-    getColorFromColorStringInterpolation(props.color, props.theme)};
   font-size: ${(props) => props.theme.font.size[props.variant]}px;
   font-family: ${(props) => props.theme.font.family.primary};
   line-height: ${(props) => props.theme.font.lineHeight[props.variant]}px;
