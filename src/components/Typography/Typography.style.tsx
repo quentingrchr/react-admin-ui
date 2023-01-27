@@ -1,13 +1,24 @@
-import styled from "styled-components";
-import { VariantTypes } from "./Typography.component";
+import styled, { DefaultTheme } from "styled-components";
+import { VariantTypes, ColorStringInterpolation } from "./Typography.component";
 import { ThemeWeight } from "../../types";
+
+function getColorFromColorStringInterpolation(
+  color: ColorStringInterpolation,
+  theme: DefaultTheme
+): string {
+  const [colorType, colorShade] = color.split("-");
+  return theme.colors[colorType][colorShade];
+}
 
 export const Container = styled.div<{
   variant: VariantTypes;
   weight: ThemeWeight;
+  color: ColorStringInterpolation;
   uppercase?: boolean;
   italic?: boolean;
 }>`
+  color: ${(props) =>
+    getColorFromColorStringInterpolation(props.color, props.theme)};
   font-size: ${(props) => props.theme.font.size[props.variant]}px;
   font-family: ${(props) => props.theme.font.family.primary};
   line-height: ${(props) => props.theme.font.lineHeight[props.variant]}px;

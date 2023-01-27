@@ -1,7 +1,8 @@
 import "styled-components";
-import { ThemeSizeTag, ThemeWeight } from "../../types";
+import { ThemeSizeTag, ThemeWeight, ThemeColorsMap } from "../../types";
+
 type ThemeTagsMap = Record<ThemeSizeTag, number>;
-type ThemeWeightMap = Record<ThemeWeight, number>;
+type ThemeWeightsMap = Record<ThemeWeight, number>;
 
 declare module "styled-components" {
   export interface DefaultTheme {
@@ -10,32 +11,9 @@ declare module "styled-components" {
         primary: string;
       };
       size: ThemeTagsMap;
-      weight: ThemeWeightMap;
+      weight: ThemeWeightsMap;
       lineHeight: ThemeTagsMap;
     };
-    colors: {
-      primary: {
-        white: string;
-        black: string;
-        brand: string;
-      };
-      secondary: {
-        neutral1: string;
-        neutral2: string;
-        neutral3: string;
-        neutral4: string;
-        error: string;
-        success: string;
-      };
-      tertiary: {
-        hover1: string;
-        pressed: string;
-        bgSuccess: string;
-        bgError: string;
-        bgBrand: string;
-        hoverDestroy: string;
-        hoverDestroyPressed: string;
-      };
-    };
+    colors: ThemeColorsMap;
   }
 }

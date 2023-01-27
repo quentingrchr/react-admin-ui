@@ -1,8 +1,8 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-
 import { dummyText } from "../../const/index";
-import Typography, { IProps, VariantTypes } from "./Typography.component";
+import Typography, { IProps } from "./Typography.component";
+
 const variantsParameterOptions: IProps["variant"][] = [
   "h1",
   "h2",
@@ -37,6 +37,18 @@ const weightParameterOptions: IProps["weight"][] = [
   "bold",
 ];
 
+const colorsParameterOptions: IProps["color"][] = [
+  "primary-black",
+  "primary-white",
+  "primary-brand",
+  "secondary-error",
+  "secondary-success",
+  "secondary-neutral1",
+  "secondary-neutral2",
+  "secondary-neutral3",
+  "secondary-neutral4",
+];
+
 export default {
   title: "Atoms/Typography",
   component: Typography,
@@ -58,6 +70,14 @@ export default {
       control: {
         type: "select",
         options: componentsParameterOptions,
+      },
+    },
+    color: {
+      defaultValue: "primary-black",
+      description: "The text color",
+      control: {
+        type: "select",
+        options: colorsParameterOptions,
       },
     },
     weight: {
