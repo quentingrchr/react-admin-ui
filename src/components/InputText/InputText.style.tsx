@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { IProps } from "./TextField.component";
+import { IProps } from "./InputText.component";
 
 const isFocusedCss = css`
   border: 1px solid ${({ theme }) => theme.colors.primary.brand};

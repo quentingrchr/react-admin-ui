@@ -1,6 +1,6 @@
 import React, { useState, FocusEvent } from "react";
 import { Typography } from "../..";
-import * as Styled from "./TextField.style";
+import * as Styled from "./InputText.style";
 
 export interface IProps extends React.HTMLAttributes<HTMLInputElement> {
   disabled?: boolean;
@@ -8,8 +8,8 @@ export interface IProps extends React.HTMLAttributes<HTMLInputElement> {
   isValid?: boolean;
 }
 
-/** `TextField` Describe the component */
-const TextField: React.FC<IProps> = ({
+/** `InputText` Describe the component */
+const InputText: React.FC<IProps> = ({
   isInvalid = false,
   isValid = false,
   disabled = false,
@@ -44,4 +44,4 @@ const TextField: React.FC<IProps> = ({
   );
 };
 
-export default TextField;
+export default InputText;

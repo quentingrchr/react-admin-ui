@@ -2,17 +2,17 @@ import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { action } from "@storybook/addon-actions";
 
-import TextField, { IProps } from "./TextField.component";
+import InputText, { IProps } from "./InputText.component";
 
 export default {
-  title: "Molecules/TextField",
-  component: TextField,
+  title: "Molecules/InputText",
+  component: InputText,
   parameters: {
     layout: "centered",
   },
 } as Meta;
 
-const Template: Story<IProps> = (args) => <TextField {...args} />;
+const Template: Story<IProps> = (args) => <InputText {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
