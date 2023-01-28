@@ -66,6 +66,14 @@ const theme: DefaultTheme = {
       pressedDestroy: "#ce0000",
     },
   },
+  spacing: {
+    1: remToPx("4rem"),
+    2: remToPx("3.6rem"),
+    3: remToPx("2.4rem"),
+    4: remToPx("1.8rem"),
+    5: remToPx("1.4rem"),
+    6: remToPx("0.8rem"),
+  },
 };
 
 export default theme;

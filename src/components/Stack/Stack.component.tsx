@@ -1,5 +1,4 @@
-import React, { useState, ReactNode, ElementType, CSSProperties } from "react";
-import { Typography } from "../..";
+import React, { ReactNode, ElementType, CSSProperties } from "react";
 import * as Styled from "./Stack.style";
 
 type StackDirection = "row" | "column" | "row-reverse" | "column-reverse";
@@ -14,7 +13,7 @@ type StackJustify =
   | "around"
   | "evenly";
 
-type Spacing = "none" | "xxsmall" | "xsmall" | "small" | "medium" | "large";
+type Spacing = 1 | 2 | 3 | 4 | 5 | 6 | string;
 
 type CustomStyle = CSSProperties;
 
@@ -40,8 +39,8 @@ const Stack: React.FC<IProps> = ({
   justify = "start",
   /** Defines the align-items style property. It is applied for all screen sizes. */
   align = "center",
-  /** Defines the space between immediate children. It is applied for all screen sizes. */
-  spacing = "small",
+  /** Defines the space between immediate children. It is applied for all screen sizes. Can be specified by theme values (number) or custom values (string) */
+  spacing = 1,
   /** Allows defining additional CSS styles. */
   css = {},
 }) => {

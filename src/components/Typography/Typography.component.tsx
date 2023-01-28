@@ -27,8 +27,6 @@ export interface IProps {
   component: ComponentTypes;
   /** The content of the component */
   children: React.ReactNode;
-  /** The text color */
-  color?: ColorStringInterpolation;
   /** The text weight */
   weight?: ThemeWeight;
   /** Set the text to uppercase */
@@ -44,14 +42,13 @@ const getDefaultWeight = (variant: VariantTypes): ThemeWeight => {
 
 /** `Typography` A component that covers all default set of font weights, sizes and line height in your application. */
 const Typography: React.FC<IProps> = (props) => {
-  const { component, variant, children, weight, color, ...other } = props;
+  const { component, variant, children, weight, ...other } = props;
   const appliedWeight = weight || getDefaultWeight(variant);
   return (
     <Styled.Container
       as={component}
       variant={variant}
       weight={appliedWeight}
-      // color={color ? color : "primary-black"}
       {...other}
     >
       {children}

@@ -30,4 +30,6 @@ export const Container = styled.div<{
   justify-content: ${({ justify }) => justifyMap[justify]};
   align-items: ${({ align }) => alignMap[align]};
   align-items: center;
+  gap: ${({ spacing, theme }) =>
+    typeof spacing === "number" ? `${theme.spacing[spacing]}px` : `${spacing}`};
 `;

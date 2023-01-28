@@ -13,7 +13,6 @@ function getColorFromColorStringInterpolation(
 export const Container = styled.div<{
   variant: VariantTypes;
   weight: ThemeWeight;
-  // color: ColorStringInterpolation;
   uppercase?: boolean;
   italic?: boolean;
 }>`
