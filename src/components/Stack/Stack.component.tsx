@@ -1,4 +1,5 @@
 import React, { ReactNode, ElementType, CSSProperties } from "react";
+import theme from "../../shared/styles/theme";
 import * as Styled from "./Stack.style";
 
 type StackDirection = "row" | "column" | "row-reverse" | "column-reverse";
@@ -13,7 +14,7 @@ type StackJustify =
   | "around"
   | "evenly";
 
-type Spacing = 1 | 2 | 3 | 4 | 5 | 6 | string;
+type Spacing = keyof typeof theme.spacing | string;
 
 type CustomStyle = CSSProperties;
 

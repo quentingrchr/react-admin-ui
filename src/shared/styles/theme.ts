@@ -72,7 +72,9 @@ const theme: DefaultTheme = {
     3: remToPx("2.4rem"),
     4: remToPx("1.8rem"),
     5: remToPx("1.4rem"),
-    6: remToPx("0.8rem"),
+    6: remToPx("1.2rem"),
+    7: remToPx("0.8rem"),
+    8: remToPx("0.4rem"),
   },
 };
 

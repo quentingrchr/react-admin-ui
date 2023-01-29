@@ -10,6 +10,8 @@ const spacingParameterOptions: IProps["spacing"][] = [
   4,
   5,
   6,
+  7,
+  8,
   "1rem",
   "2rem",
   "50px",
