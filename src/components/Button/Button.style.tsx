@@ -74,6 +74,10 @@ export const Button = styled.button<{ variant: IProps["variant"] }>`
   border-radius: 8px;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
+  svg,
+  path {
+    transition: all 0.2s ease-in-out;
+  }
   ${({ variant }) => {
     switch (variant) {
       case "primary":
