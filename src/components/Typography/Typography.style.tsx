@@ -1,6 +1,6 @@
 import styled, { DefaultTheme } from "styled-components";
-import { VariantTypes, ColorStringInterpolation } from "./Typography.component";
-import { ThemeWeight } from "../../types";
+import { VariantTypes } from "./Typography.component";
+import { ThemeWeight, ColorStringInterpolation } from "../../types";
 
 function getColorFromColorStringInterpolation(
   color: ColorStringInterpolation,

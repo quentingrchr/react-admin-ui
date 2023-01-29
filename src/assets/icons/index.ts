@@ -1,3 +1,4 @@
-import RefreshOutlined from "./refresh-outlined";
+import RefreshOutlined from "./RefreshOutlined";
+import RefreshFilled from "./RefreshFilled";
 
-export { RefreshOutlined };
+export { RefreshOutlined, RefreshFilled };

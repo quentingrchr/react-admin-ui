@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { IProps } from "./Stack.component";
 
 const alignMap: Record<NonNullable<IProps["align"]>, string> = {
@@ -23,7 +23,7 @@ export const Container = styled.div<{
   spacing: NonNullable<IProps["spacing"]>;
   align: NonNullable<IProps["align"]>;
   justify: NonNullable<IProps["justify"]>;
-  css: NonNullable<IProps["css"]>;
+  css?: NonNullable<IProps["css"]>;
 }>`
   display: flex;
   flex-direction: ${({ direction }) => direction};

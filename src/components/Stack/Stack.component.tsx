@@ -25,7 +25,7 @@ export interface IProps {
   justify?: StackJustify;
   align?: StackAlign;
   spacing?: Spacing;
-  css: CustomStyle;
+  css?: CustomStyle;
 }
 
 /** `Stack` Component thet manages layout of immediate children along the vertical or horizontal axis with optional spacing and/or dividers between each child. */

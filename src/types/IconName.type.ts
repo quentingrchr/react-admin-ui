@@ -1,3 +1,3 @@
-type Name = "home" | "search" | "settings" | "user" | "refresh";
-type Type = "outlined" | "filled";
-export type IconName = `${Name}-${Type}`;
+export type IconName = "refresh";
+export type IconType = "outlined" | "filled";
+export type IconID = `${IconName}-${IconType}`;

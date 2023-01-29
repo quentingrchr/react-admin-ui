@@ -1,8 +1,8 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { action } from "@storybook/addon-actions";
-
 import Button, { IProps } from "./Button.component";
+import { getIconParametersOptions } from "../../shared/utils";
 
 const variantsParameterOptions: IProps["variant"][] = [
   "primary",
@@ -30,6 +30,22 @@ export default {
         type: "text",
       },
     },
+    leftIcon: {
+      defaultValue: undefined,
+      description: "The icon to use.",
+      control: {
+        type: "select",
+        options: getIconParametersOptions(),
+      },
+    },
+    rightIcon: {
+      defaultValue: undefined,
+      description: "The icon to use.",
+      control: {
+        type: "select",
+        options: getIconParametersOptions(),
+      },
+    },
   },
   parameters: {
     layout: "centered",
@@ -42,6 +58,14 @@ export const Primary = Template.bind({});
 Primary.args = {
   variant: "primary",
   label: "Primary",
+  onClick: action("onClick"),
+} as IProps;
+
+export const PrimaryIcon = Template.bind({});
+PrimaryIcon.args = {
+  variant: "primary",
+  label: "Primary",
+  rightIcon: "refresh-outlined",
   onClick: action("onClick"),
 } as IProps;
 

@@ -37,18 +37,6 @@ const weightParameterOptions: IProps["weight"][] = [
   "bold",
 ];
 
-const colorsParameterOptions: IProps["color"][] = [
-  "primary-black",
-  "primary-white",
-  "primary-brand",
-  "secondary-danger",
-  "secondary-success",
-  "secondary-neutral1",
-  "secondary-neutral2",
-  "secondary-neutral3",
-  "secondary-neutral4",
-];
-
 export default {
   title: "Atoms/Typography",
   component: Typography,
@@ -70,14 +58,6 @@ export default {
       control: {
         type: "select",
         options: componentsParameterOptions,
-      },
-    },
-    color: {
-      defaultValue: "primary-black",
-      description: "The text color",
-      control: {
-        type: "select",
-        options: colorsParameterOptions,
       },
     },
     weight: {

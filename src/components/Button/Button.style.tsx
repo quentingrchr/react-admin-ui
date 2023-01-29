@@ -3,6 +3,7 @@ import { IProps } from "./Button.component";
 
 const PrimaryVariant = css`
   color: ${({ theme }) => theme.colors.primary.white};
+  --__icon-color: ${({ theme }) => theme.colors.primary.white};
   border: 1px solid transparent;
   background-color: ${({ theme }) => theme.colors.primary.brand};
   &:hover {
@@ -18,14 +19,17 @@ const SecondaryVariant = css`
   background-color: transparent;
   border: 1px solid ${({ theme }) => theme.colors.primary.brand};
   color: ${({ theme }) => theme.colors.primary.brand};
+  --__icon-color: ${({ theme }) => theme.colors.primary.brand};
   &:hover {
     border: 1px solid ${({ theme }) => theme.colors.tertiary.hover1};
     color: ${({ theme }) => theme.colors.tertiary.hover1};
+    --__icon-color: ${({ theme }) => theme.colors.tertiary.hover1};
   }
   &:active,
   &:focus {
     border: 1px solid ${({ theme }) => theme.colors.tertiary.pressed};
     color: ${({ theme }) => theme.colors.tertiary.pressed};
+    --__icon-color: ${({ theme }) => theme.colors.tertiary.pressed};
   }
 `;
 
@@ -33,6 +37,8 @@ const TertiaryVariant = css`
   background-color: transparent;
   border: 1px solid ${({ theme }) => theme.colors.secondary.neutral2};
   color: ${({ theme }) => theme.colors.primary.black};
+  --__icon-color: ${({ theme }) => theme.colors.primary.black};
+
   &:hover {
     border: 1px solid ${({ theme }) => theme.colors.primary.black};
   }
@@ -41,6 +47,7 @@ const TertiaryVariant = css`
     border: 1px solid ${({ theme }) => theme.colors.primary.black};
     background-color: ${({ theme }) => theme.colors.primary.black};
     color: ${({ theme }) => theme.colors.primary.white};
+    --__icon-color: ${({ theme }) => theme.colors.primary.white};
   }
 `;
 
@@ -48,6 +55,7 @@ const DestructiveVariant = css`
   background-color: ${({ theme }) => theme.colors.secondary.danger};
   border: 1px solid ${({ theme }) => theme.colors.secondary.danger};
   color: ${({ theme }) => theme.colors.primary.white};
+  --__icon-color: ${({ theme }) => theme.colors.primary.white};
   &:hover {
     background-color: ${({ theme }) => theme.colors.tertiary.hoverDestroy};
     border: 1px solid ${({ theme }) => theme.colors.tertiary.hoverDestroy};
@@ -76,7 +84,6 @@ export const Button = styled.button<{ variant: IProps["variant"] }>`
         return TertiaryVariant;
       case "destructive":
         return DestructiveVariant;
-
       default:
         return PrimaryVariant;
     }

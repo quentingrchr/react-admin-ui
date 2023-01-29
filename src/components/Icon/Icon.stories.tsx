@@ -1,8 +1,8 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-
+import { getIconParametersOptions } from "../../shared/utils";
 import Button, { IProps } from "./Icon.component";
-const iconParameterOptions: IProps["icon"][] = ["refresh-outlined"];
+import { getColorStringInterpolationParametersOptions } from "../../shared/utils";
 
 export default {
   title: "Atoms/Icon",
@@ -13,7 +13,15 @@ export default {
       description: "The icon to use.",
       control: {
         type: "select",
-        options: iconParameterOptions,
+        options: getIconParametersOptions(),
+      },
+    },
+    color: {
+      defaultValue: "primary",
+      description: "The color of the icon.",
+      control: {
+        type: "select",
+        options: getColorStringInterpolationParametersOptions(),
       },
     },
   },
@@ -27,4 +35,5 @@ const Template: Story<IProps> = (args) => <Button {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   icon: "refresh-outlined",
+  color: "primary-brand",
 } as IProps;

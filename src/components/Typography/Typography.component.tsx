@@ -1,11 +1,8 @@
 import React from "react";
-import { ThemeSizeTag, ThemeWeight, ThemeColorsMap } from "../../types";
+import { ThemeSizeTag, ThemeWeight } from "../../types";
 import * as Styled from "./Typography.style";
 
 export type VariantTypes = ThemeSizeTag;
-export type ColorStringInterpolation =
-  | `primary-${keyof ThemeColorsMap["primary"]}`
-  | `secondary-${keyof ThemeColorsMap["secondary"]}`;
 
 type ComponentTypes =
   | "h1"
