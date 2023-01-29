@@ -20,10 +20,17 @@ export const Input = styled.input`
   }
 `;
 
+export const IconWrapper = styled.div`
+  --__icon-color: ${({ theme }) => theme.colors.primary.brand};
+`;
+
 const isDisableCss = css`
   background-color: ${({ theme }) => theme.colors.secondary.neutral1};
   border: 1px solid ${({ theme }) => theme.colors.secondary.neutral2};
   cursor: not-allowed;
+  ${IconWrapper} {
+    opacity: 0.5;
+  }
 `;
 
 const isValidCss = css`

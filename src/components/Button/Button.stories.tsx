@@ -61,11 +61,19 @@ Primary.args = {
   onClick: action("onClick"),
 } as IProps;
 
-export const PrimaryIcon = Template.bind({});
-PrimaryIcon.args = {
+export const PrimaryRightIcon = Template.bind({});
+PrimaryRightIcon.args = {
   variant: "primary",
   label: "Primary",
   rightIcon: "refresh-outlined",
+  onClick: action("onClick"),
+} as IProps;
+
+export const PrimaryLeftIcon = Template.bind({});
+PrimaryLeftIcon.args = {
+  variant: "primary",
+  label: "Primary",
+  leftIcon: "refresh-outlined",
   onClick: action("onClick"),
 } as IProps;
 
@@ -84,6 +92,14 @@ Secondary.args = {
   onClick: action("onClick"),
 } as IProps;
 
+export const SecondaryRightIcon = Template.bind({});
+SecondaryRightIcon.args = {
+  variant: "secondary",
+  label: "Secondary",
+  rightIcon: "refresh-outlined",
+  onClick: action("onClick"),
+} as IProps;
+
 export const SecondaryDisabled = Template.bind({});
 SecondaryDisabled.args = {
   variant: "secondary",
@@ -99,6 +115,14 @@ Tertiary.args = {
   onClick: action("onClick"),
 } as IProps;
 
+export const TertiaryRightIcon = Template.bind({});
+TertiaryRightIcon.args = {
+  variant: "tertiary",
+  label: "Tertiary",
+  rightIcon: "refresh-outlined",
+  onClick: action("onClick"),
+} as IProps;
+
 export const TertiaryDisabled = Template.bind({});
 TertiaryDisabled.args = {
   variant: "tertiary",
@@ -111,6 +135,14 @@ export const Destructive = Template.bind({});
 Destructive.args = {
   variant: "destructive",
   label: "Destructive",
+  onClick: action("onClick"),
+} as IProps;
+
+export const DestructiveRightIcon = Template.bind({});
+DestructiveRightIcon.args = {
+  variant: "destructive",
+  label: "Destructive",
+  rightIcon: "refresh-outlined",
   onClick: action("onClick"),
 } as IProps;
 

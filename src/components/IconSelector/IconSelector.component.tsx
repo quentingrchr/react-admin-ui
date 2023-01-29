@@ -15,6 +15,10 @@ function selector(icon: IProps["icon"]): ReturnType<React.FC> {
       return <Icons.RefreshOutlined />;
     case "refresh-filled":
       return <Icons.RefreshFilled />;
+    case "search-outlined":
+      return <Icons.SearchOutlined />;
+    case "search-filled":
+      return <Icons.SearchFilled />;
     default:
       throw new Error(`Icon ${icon} not found`);
   }

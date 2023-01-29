@@ -1,12 +1,12 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { getIconParametersOptions } from "../../shared/utils";
-import Button, { IProps } from "./Icon.component";
+import Icon, { IProps } from "./Icon.component";
 import { getColorStringInterpolationParametersOptions } from "../../shared/utils";
 
 export default {
   title: "Atoms/Icon",
-  component: Button,
+  component: Icon,
   argTypes: {
     icon: {
       defaultValue: "refresh-outlined",
@@ -30,10 +30,62 @@ export default {
   },
 } as Meta;
 
-const Template: Story<IProps> = (args) => <Button {...args} />;
+const Container = ({ children }: { children: React.ReactNode }) => (
+  <div
+    style={{
+      width: "100%",
+      height: "100%",
+      display: "grid",
+      gridTemplateColumns: "auto auto auto auto",
+      gridGap: "1rem",
+    }}
+  >
+    {children}
+  </div>
+);
 
-export const Default = Template.bind({});
-Default.args = {
+const IconContainer = ({
+  children,
+  label,
+}: {
+  children: React.ReactNode;
+  label: string;
+}) => (
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "flex-end",
+    }}
+  >
+    {children}
+    <div style={{ marginTop: "0.5rem", fontSize: "8px" }}>{label}</div>
+  </div>
+);
+
+const AllTemplate: Story<IProps> = (args) => {
+  return (
+    <Container>
+      {getIconParametersOptions().map((icon) => (
+        <IconContainer label={icon}>
+          <Icon key={icon} icon={icon} color={args.color} />
+        </IconContainer>
+      ))}
+    </Container>
+  );
+};
+const SingleTemplate: Story<IProps> = (args) => {
+  return <Icon icon={args.icon} color={args.color} />;
+};
+
+export const AllIcons = AllTemplate.bind({});
+AllIcons.args = {
+  color: "primary-brand",
+} as IProps;
+
+export const SingleIcon = SingleTemplate.bind({});
+SingleIcon.args = {
   icon: "refresh-outlined",
   color: "primary-brand",
 } as IProps;

@@ -1,4 +1,6 @@
-import RefreshOutlined from "./RefreshOutlined";
-import RefreshFilled from "./RefreshFilled";
+import RefreshOutlined from "./RefreshFilled";
+import RefreshFilled from "./RefreshOutlined";
+import SearchFilled from "./SearchFilled";
+import SearchOutlined from "./SearchOutlined";
 
-export { RefreshOutlined, RefreshFilled };
+export { RefreshOutlined, RefreshFilled, SearchFilled, SearchOutlined };

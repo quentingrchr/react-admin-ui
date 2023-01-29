@@ -14,6 +14,7 @@ const outlinedCss = css<{
 }>`
   svg {
     display: flex;
+
     path {
       display: flex;
       stroke: var(--__icon-color);
