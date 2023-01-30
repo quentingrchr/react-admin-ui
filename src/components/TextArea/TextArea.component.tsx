@@ -1,24 +1,21 @@
 import React, { useState, FocusEvent } from "react";
-import * as Styled from "./InputText.style";
+import * as Styled from "./TextArea.style";
 import { IconID } from "../../types";
 import IconSelector from "../IconSelector";
 
-export interface IProps extends React.HTMLAttributes<HTMLInputElement> {
-  id: string;
+export interface IProps extends React.HTMLAttributes<HTMLTextAreaElement> {
   disabled?: boolean;
   isInvalid?: boolean;
   isValid?: boolean;
   icon?: IconID;
   value: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   placeholder?: string;
   onIconClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
-/** `InputText` Describe the component */
-const InputText: React.FC<IProps> = ({
-  /** The id of the input */
-  id,
+/** `TextArea` Describe the component */
+const TextArea: React.FC<IProps> = ({
   /** Whether the input is valid. */
   isInvalid = false,
   /** Whether the input is invalid. */
@@ -35,26 +32,21 @@ const InputText: React.FC<IProps> = ({
   placeholder,
   /** The function to call when user click on the icon */
   onIconClick,
-  ...inputHTMLTagProps
+  ...textareaHTMLTagProps
 }) => {
   const [isFocused, setIsFocused] = useState(false);
 
-  const handleFocus = (event: FocusEvent<HTMLInputElement>) => {
+  const handleFocus = (event: FocusEvent<HTMLTextAreaElement>) => {
     if (disabled) return;
     setIsFocused(true);
   };
 
-  const handleBlur = (event: FocusEvent<HTMLInputElement>) => {
+  const handleBlur = (event: FocusEvent<HTMLTextAreaElement>) => {
     if (disabled) return;
     setIsFocused(false);
   };
 
-  const handleIconClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    if (disabled || onIconClick === undefined) return;
-    onIconClick(event);
-  };
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     if (disabled) return;
     onChange(event);
   };
@@ -66,23 +58,19 @@ const InputText: React.FC<IProps> = ({
       isInvalid={isInvalid}
       isValid={isValid}
     >
-      <Styled.Input
-        placeholder={placeholder}
+      <Styled.TextArea
         onFocus={handleFocus}
         onBlur={handleBlur}
         disabled={disabled}
         value={value}
         onChange={handleChange}
-        id={id}
-        {...inputHTMLTagProps}
-      />
-      {icon !== undefined && (
-        <Styled.IconWrapper onClick={handleIconClick}>
-          <IconSelector icon={icon} />
-        </Styled.IconWrapper>
-      )}
+        {...textareaHTMLTagProps}
+        placeholder={placeholder}
+      >
+        {value}
+      </Styled.TextArea>
     </Styled.InputWrapper>
   );
 };
 
-export default InputText;
+export default TextArea;

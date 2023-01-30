@@ -36,8 +36,8 @@ const Container = ({ children }: { children: React.ReactNode }) => (
       width: "100%",
       height: "100%",
       display: "grid",
-      gridTemplateColumns: "auto auto auto auto",
-      gridGap: "1rem",
+      gridTemplateColumns: "auto auto auto auto auto auto",
+      gridGap: "2rem",
     }}
   >
     {children}
@@ -60,7 +60,16 @@ const IconContainer = ({
     }}
   >
     {children}
-    <div style={{ marginTop: "0.5rem", fontSize: "8px" }}>{label}</div>
+    <div
+      style={{
+        marginTop: "0.5rem",
+        fontSize: "8px",
+        fontFamily: "Inter",
+        color: "#70727a",
+      }}
+    >
+      {label}
+    </div>
   </div>
 );
 

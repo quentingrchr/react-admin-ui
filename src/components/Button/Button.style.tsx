@@ -67,6 +67,24 @@ const DestructiveVariant = css`
   }
 `;
 
+const LinkVariant = css`
+  color: ${({ theme }) => theme.colors.primary.brand};
+  --__icon-color: ${({ theme }) => theme.colors.primary.brand};
+  background-color: transparent;
+  &:hover {
+    color: ${({ theme }) => theme.colors.tertiary.hover1};
+  }
+  &:active,
+  &:focus {
+    color: ${({ theme }) => theme.colors.tertiary.pressed};
+  }
+`;
+
+export const IconContainer = styled.span`
+  transform: scale(1);
+  transition: all 0.3s cubic-bezier(0.82, -0.12, 0.19, 1.77);
+`;
+
 export const Button = styled.button<{ variant: IProps["variant"] }>`
   outline: none;
   border: none;
@@ -88,6 +106,8 @@ export const Button = styled.button<{ variant: IProps["variant"] }>`
         return TertiaryVariant;
       case "destructive":
         return DestructiveVariant;
+      case "link":
+        return LinkVariant;
       default:
         return PrimaryVariant;
     }
@@ -95,5 +115,12 @@ export const Button = styled.button<{ variant: IProps["variant"] }>`
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+  }
+  &:focus,
+  &:active {
+    ${IconContainer} {
+      transform: scale(0.8);
+      transform-origin: center;
+    }
   }
 `;

@@ -36,3 +36,11 @@ Default.args = {
   href: "https://www.google.com",
   target: "_blank",
 } as IProps;
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  label: "Button",
+  href: "https://www.google.com",
+  target: "_blank",
+  disabled: true,
+} as IProps;

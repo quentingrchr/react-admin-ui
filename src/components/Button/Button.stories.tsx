@@ -153,3 +153,26 @@ DestructiveDisabled.args = {
   onClick: action("onClick"),
   disabled: true,
 } as IProps;
+
+export const Link = Template.bind({});
+Link.args = {
+  variant: "link",
+  label: "Link",
+  onClick: action("onClick"),
+} as IProps;
+
+export const LinkRightIcon = Template.bind({});
+LinkRightIcon.args = {
+  variant: "link",
+  label: "Link",
+  rightIcon: "refresh-outlined",
+  onClick: action("onClick"),
+} as IProps;
+
+export const LinkDisabled = Template.bind({});
+LinkDisabled.args = {
+  variant: "link",
+  label: "Link",
+  onClick: action("onClick"),
+  disabled: true,
+} as IProps;

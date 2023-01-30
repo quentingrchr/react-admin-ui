@@ -5,9 +5,14 @@ import { ColorStringInterpolation, IconID } from "../../types";
 import Stack from "../Stack";
 import IconSelector from "../IconSelector";
 
-type ButtonVariant = "primary" | "secondary" | "tertiary" | "destructive";
+type ButtonVariant =
+  | "primary"
+  | "secondary"
+  | "tertiary"
+  | "destructive"
+  | "link";
 
-export interface IProps {
+export interface IProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /** Text of the button */
   label: string;
   /** The variant to use */
@@ -20,6 +25,10 @@ export interface IProps {
   leftIcon?: IconID;
   /** Right icon in the component */
   rightIcon?: IconID;
+  /** Type of the button HTML element */
+  type?: React.ButtonHTMLAttributes<HTMLButtonElement>["type"];
+  /** Title of the button HTML element */
+  title?: React.ButtonHTMLAttributes<HTMLButtonElement>["title"];
 }
 
 /** `Button` Component that allow users to take actions, and make choices, with a single tap. */
@@ -30,36 +39,37 @@ const Button: React.FC<IProps> = ({
   disabled = false,
   leftIcon,
   rightIcon,
+  type = "button",
+  title = label,
 }) => {
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (!disabled) {
       onClick(event);
     }
   };
-  function getIconColor(): ColorStringInterpolation {
-    if (variant === "primary") {
-      return "primary-white";
-    }
-    if (variant === "secondary") {
-      return "primary-brand";
-    }
-    if (variant === "tertiary") {
-      return "primary-black";
-    }
-    if (variant === "destructive") {
-      return "primary-white";
-    }
-    return "primary-white";
-  }
 
   return (
-    <Styled.Button variant={variant} disabled={disabled} onClick={handleClick}>
+    <Styled.Button
+      variant={variant}
+      disabled={disabled}
+      onClick={handleClick}
+      title={title}
+      type={type}
+    >
       <Stack direction="row" spacing={6} justify={"between"}>
-        {leftIcon && <IconSelector icon={leftIcon} />}
+        {leftIcon && (
+          <Styled.IconContainer>
+            <IconSelector icon={leftIcon} />
+          </Styled.IconContainer>
+        )}
         <Typography component="span" variant="body1" weight="semiBold">
           {label}
         </Typography>
-        {rightIcon && <IconSelector icon={rightIcon} />}
+        {rightIcon && (
+          <Styled.IconContainer>
+            <IconSelector icon={rightIcon} />
+          </Styled.IconContainer>
+        )}
       </Stack>
     </Styled.Button>
   );
