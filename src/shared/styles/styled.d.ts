@@ -25,5 +25,14 @@ declare module "styled-components" {
       7: number;
       8: number;
     };
+    icon: {
+      size: {
+        "x-small": number;
+        small: number;
+        medium: number;
+        large: number;
+        "x-large": number;
+      };
+    };
   }
 }

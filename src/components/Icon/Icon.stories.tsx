@@ -3,6 +3,7 @@ import { Story, Meta } from "@storybook/react/types-6-0";
 import { getIconParametersOptions } from "../../shared/utils";
 import Icon, { IProps } from "./Icon.component";
 import { getColorStringInterpolationParametersOptions } from "../../shared/utils";
+import theme from "../../shared/styles/theme";
 
 export default {
   title: "Atoms/Icon",
@@ -22,6 +23,16 @@ export default {
       control: {
         type: "select",
         options: getColorStringInterpolationParametersOptions(),
+      },
+    },
+    size: {
+      defaultValue: "medium",
+      description: "The size of the icon.",
+      control: {
+        type: "select",
+        options: Object.keys(
+          (theme as any).icon.size
+        ) /* bug with DefaultTheme interface not being extended in stories */,
       },
     },
   },
@@ -78,7 +89,7 @@ const AllTemplate: Story<IProps> = (args) => {
     <Container>
       {getIconParametersOptions().map((icon) => (
         <IconContainer label={icon}>
-          <Icon key={icon} icon={icon} color={args.color} />
+          <Icon key={icon} icon={icon} color={args.color} size={args.size} />
         </IconContainer>
       ))}
     </Container>

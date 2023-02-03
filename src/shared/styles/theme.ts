@@ -76,6 +76,15 @@ const theme: DefaultTheme = {
     7: remToPx("0.8rem"),
     8: remToPx("0.4rem"),
   },
+  icon: {
+    size: {
+      "x-small": 16,
+      small: 20,
+      medium: 24,
+      large: 32,
+      "x-large": 36,
+    },
+  },
 };
 
 export default theme;

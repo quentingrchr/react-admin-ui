@@ -1,9 +1,11 @@
-import React, { useState, FocusEvent } from "react";
+import React from "react";
 import * as Styled from "./TextField.style";
 import Stack from "../Stack";
-import { IconID } from "../../types";
+import { IconID, TooltipType } from "../../types";
 import InputText from "../InputText";
 import Typography from "../Typography";
+
+import Tooltip from "../Tooltip";
 
 export interface IProps extends React.HTMLAttributes<HTMLInputElement> {
   id: string;
@@ -16,6 +18,9 @@ export interface IProps extends React.HTMLAttributes<HTMLInputElement> {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   onIconClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
+  tooltip?: {
+    text: string;
+  };
 }
 
 /** `TextField` Describe the component */
@@ -40,6 +45,8 @@ const TextField: React.FC<IProps> = ({
   placeholder,
   /** The function to call when user click on the icon */
   onIconClick,
+  /** The tooltip component of the input */
+  tooltip,
   ...inputHTMLTagProps
 }) => {
   const handleIconClick = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -73,6 +80,12 @@ const TextField: React.FC<IProps> = ({
           {...inputHTMLTagProps}
         />
       </Stack>
+      {!!tooltip && (
+        <Tooltip
+          type={(error && "error") || (success && "success") || "default"}
+          text={tooltip.text}
+        />
+      )}
     </Styled.Container>
   );
 };

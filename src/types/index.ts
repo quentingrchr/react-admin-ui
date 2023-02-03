@@ -5,6 +5,8 @@ import { ThemeWeight } from "./ThemeWeight.type";
 import { ThemeColorsMap } from "./ThemeColorsMap.type";
 import { IconID, IconType, IconName } from "./IconName.type";
 import { ColorStringInterpolation } from "./ColorStringInterpolation.type";
+import { NonNullable } from "./NonNullable.type";
+import { TooltipType } from "./TooltipType.type";
 
 export type {
   ThemeSizeTag,
@@ -16,4 +18,6 @@ export type {
   IconType,
   IconName,
   IconID,
+  NonNullable,
+  TooltipType,
 };

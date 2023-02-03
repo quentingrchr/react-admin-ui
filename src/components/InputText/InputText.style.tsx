@@ -22,6 +22,11 @@ export const Input = styled.input`
 
 export const IconWrapper = styled.div`
   --__icon-color: ${({ theme }) => theme.colors.primary.brand};
+  --__icon-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 `;
 
 const isDisableCss = css`

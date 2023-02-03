@@ -1,4 +1,6 @@
-function RefreshFilled(props: any) {
+import * as React from "react";
+
+function InformationCircleOutlined(props) {
   return (
     <svg
       width={24}
@@ -6,11 +8,11 @@ function RefreshFilled(props: any) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
-    
       {...props}
     >
       <path
-        d="M4 4v5h.582m0 0a8.001 8.001 0 0115.356 2M4.582 9H9m11 11v-5h-.581m0 0a8.002 8.002 0 01-15.357-2m15.357 2H15"
+        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+        stroke="#232325"
         strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -19,4 +21,4 @@ function RefreshFilled(props: any) {
   );
 }
 
-export default RefreshFilled;
+export default InformationCircleOutlined;

@@ -61,3 +61,47 @@ WithSuccess.args = {
   placeholder: "Type something to search",
   success: true,
 } as IProps;
+
+export const WithTooltip = Template.bind({});
+WithTooltip.args = {
+  id: "with-tooltip",
+  label: "Tooltip",
+  placeholder: "Type something to search",
+  tooltip: {
+    text: "This is a tooltip",
+  },
+} as IProps;
+
+export const WithTooltipAndIcon = Template.bind({});
+WithTooltipAndIcon.args = {
+  id: "with-tooltip-and-icon",
+  label: "Tooltip and icon",
+  placeholder: "Type something to search",
+  tooltip: {
+    text: "This is a tooltip",
+  },
+  icon: "search-filled",
+  onIconClick: action("onIconClick"),
+} as IProps;
+
+export const WithTooltipAndError = Template.bind({});
+WithTooltipAndError.args = {
+  id: "with-tooltip-and-error",
+  label: "Tooltip and error",
+  placeholder: "Enter your email",
+  tooltip: {
+    text: "This is a tooltip",
+  },
+  error: true,
+} as IProps;
+
+export const WithTooltipAndSuccess = Template.bind({});
+WithTooltipAndSuccess.args = {
+  id: "with-tooltip-and-success",
+  label: "Tooltip and success",
+  placeholder: "Enter your name",
+  tooltip: {
+    text: "This is a tooltip",
+  },
+  success: true,
+} as IProps;

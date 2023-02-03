@@ -6,5 +6,7 @@ export default function getIconParametersOptions(): IconID[] {
     "refresh-filled",
     "search-outlined",
     "search-filled",
+    "information-circle-outlined",
+    "information-circle-filled",
   ];
 }
