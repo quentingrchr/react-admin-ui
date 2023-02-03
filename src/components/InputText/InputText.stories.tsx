@@ -35,14 +35,14 @@ export default {
         type: "boolean",
       },
     },
-    isValid: {
+    success: {
       defaultValue: false,
       description: "Whether the input is valid.",
       control: {
         type: "boolean",
       },
     },
-    isInvalid: {
+    error: {
       defaultValue: false,
       description: "Whether the input is invalid.",
       control: {
@@ -84,18 +84,18 @@ Disabled.args = {
   placeholder: "Input is disabled you can't enter value",
 } as IProps;
 
-export const Valid = Template.bind({});
-Valid.args = {
+export const Success = Template.bind({});
+Success.args = {
   placeholder: "Enter a value ...",
   disabled: false,
-  isValid: true,
+  success: true,
 } as IProps;
 
-export const Invalid = Template.bind({});
-Invalid.args = {
-  placeholder: "The value is invalid",
+export const Error = Template.bind({});
+Error.args = {
+  placeholder: "Error input",
   disabled: false,
-  isInvalid: true,
+  error: true,
 } as IProps;
 
 export const WithIcon = Template.bind({});

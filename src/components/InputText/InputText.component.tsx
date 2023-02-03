@@ -6,8 +6,8 @@ import IconSelector from "../IconSelector";
 export interface IProps extends React.HTMLAttributes<HTMLInputElement> {
   id: string;
   disabled?: boolean;
-  isInvalid?: boolean;
-  isValid?: boolean;
+  error?: boolean;
+  success?: boolean;
   icon?: IconID;
   value: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -20,9 +20,9 @@ const InputText: React.FC<IProps> = ({
   /** The id of the input */
   id,
   /** Whether the input is valid. */
-  isInvalid = false,
+  error = false,
   /** Whether the input is invalid. */
-  isValid = false,
+  success = false,
   /** True if the input is disabled. */
   disabled = false,
   /** The right side icon to use */
@@ -63,8 +63,8 @@ const InputText: React.FC<IProps> = ({
     <Styled.InputWrapper
       isFocused={isFocused}
       isDisabled={disabled}
-      isInvalid={isInvalid}
-      isValid={isValid}
+      error={error}
+      success={success}
     >
       <Styled.Input
         placeholder={placeholder}

@@ -45,3 +45,19 @@ WithIcon.args = {
   icon: "search-filled",
   onIconClick: action("onIconClick"),
 } as IProps;
+
+export const WithError = Template.bind({});
+WithError.args = {
+  id: "with-error",
+  label: "Error",
+  placeholder: "Type something to search",
+  error: true,
+} as IProps;
+
+export const WithSuccess = Template.bind({});
+WithSuccess.args = {
+  id: "with-success",
+  label: "Success",
+  placeholder: "Type something to search",
+  success: true,
+} as IProps;

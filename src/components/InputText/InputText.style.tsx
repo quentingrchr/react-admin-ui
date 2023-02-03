@@ -33,19 +33,19 @@ const isDisableCss = css`
   }
 `;
 
-const isValidCss = css`
+const successCss = css`
   border: 1px solid ${({ theme }) => theme.colors.secondary.success};
 `;
 
-const isInvalidCss = css`
+const errorCss = css`
   border: 1px solid ${({ theme }) => theme.colors.secondary.danger};
 `;
 
 export const InputWrapper = styled.div<{
   isFocused: boolean;
   isDisabled: IProps["disabled"];
-  isValid: IProps["isValid"];
-  isInvalid: IProps["isInvalid"];
+  success: IProps["success"];
+  error: IProps["error"];
 }>`
   display: flex;
   justify-content: space-between;
@@ -56,6 +56,6 @@ export const InputWrapper = styled.div<{
   min-width: 332px;
   ${({ isFocused }) => isFocused && isFocusedCss}
   ${({ isDisabled }) => isDisabled && isDisableCss}
-  ${({ isValid }) => isValid && isValidCss}
-  ${({ isInvalid }) => isInvalid && isInvalidCss}
+  ${({ success }) => success && successCss}
+  ${({ error }) => error && errorCss}
 `;

@@ -9,8 +9,8 @@ export interface IProps extends React.HTMLAttributes<HTMLInputElement> {
   id: string;
   label: string;
   disabled?: boolean;
-  isInvalid?: boolean;
-  isValid?: boolean;
+  error?: boolean;
+  success?: boolean;
   icon?: IconID;
   value: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -25,9 +25,9 @@ const TextField: React.FC<IProps> = ({
   /** The label of the TextField component */
   label,
   /** Whether the input is valid. */
-  isInvalid = false,
+  error = false,
   /** Whether the input is invalid. */
-  isValid = false,
+  success = false,
   /** True if the input is disabled. */
   disabled = false,
   /** The right side icon of the input to use */
@@ -67,8 +67,8 @@ const TextField: React.FC<IProps> = ({
           placeholder={placeholder}
           icon={icon ? icon : undefined}
           onIconClick={handleIconClick}
-          isInvalid={isInvalid}
-          isValid={isValid}
+          error={error}
+          success={success}
           disabled={disabled}
           {...inputHTMLTagProps}
         />
