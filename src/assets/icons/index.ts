@@ -4,6 +4,8 @@ import SearchFilled from "./SearchFilled";
 import SearchOutlined from "./SearchOutlined";
 import InformationCircleFilled from "./InformationCircleFilled";
 import InformationCircleOutlined from "./InformationCircleOutlined";
+import PhotographFilled from "./PhotographFilled";
+import PhotographOutlined from "./PhotographOutlined";
 
 export {
   RefreshOutlined,
@@ -12,4 +14,6 @@ export {
   SearchOutlined,
   InformationCircleFilled,
   InformationCircleOutlined,
+  PhotographFilled,
+  PhotographOutlined,
 };

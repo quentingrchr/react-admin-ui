@@ -8,5 +8,7 @@ export default function getIconParametersOptions(): IconID[] {
     "search-filled",
     "information-circle-outlined",
     "information-circle-filled",
+    "photograph-outlined",
+    "photograph-filled",
   ];
 }
