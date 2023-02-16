@@ -60,7 +60,7 @@ export const OptionsWrapper = styled.div<{
   border-radius: 8px;
   max-height: ${({ maxHeight }) =>
     maxHeight !== undefined ? `${maxHeight}px` : "none"};
-  overflow: scroll;
+  overflow-y: scroll;
 `;
 
 export const Options = styled.div<{

@@ -1,7 +1,6 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useToggle } from "../../hooks";
 import Icon from "../Icon";
-import Typography from "../Typography";
 import * as Styled from "./SelectDropdown.style";
 
 interface Option {
@@ -15,15 +14,19 @@ export interface IProps {
   nullOption?: string;
   options: Option[];
   onChange: (value: Option["value"] | null) => {};
+  placeholder?: string;
 }
 
 /** `SelectDropdown` */
 const SelectDropdown: React.FC<IProps> = ({
+  /** The placeholder of the input */
+  placeholder,
+  /** Options of the select */
   options = [],
   /** Max height of the options list (in pixels) */
   maxHeight,
   /** Functions called when the input change */
-  onChange = () => {},
+  onChange,
   /** Null option, label of the option to unset the value of the input */
   nullOption,
 }) => {
@@ -39,6 +42,7 @@ const SelectDropdown: React.FC<IProps> = ({
   }
 
   useEffect(() => {
+    if (!onChange) return;
     const value = selected?.value ?? null;
     onChange(value);
   }, [selected, onChange]);
@@ -48,7 +52,7 @@ const SelectDropdown: React.FC<IProps> = ({
       <Styled.Select ref={selectedRef} onClick={toggleOpen}>
         <Styled.Input>
           <Styled.Placeholder component="span" variant="body1">
-            {!selected ? "Select an option..." : selected.label}
+            {!selected ? placeholder : selected.label}
           </Styled.Placeholder>
           <Styled.IconWrapper isOpen={isOpen}>
             <Icon
