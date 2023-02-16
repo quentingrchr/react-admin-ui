@@ -35,6 +35,12 @@ export default {
         ) /* bug with DefaultTheme interface not being extended in stories */,
       },
     },
+    onClick: {
+      description: "The function to call when the icon is clicked.",
+      control: {
+        type: "function",
+      },
+    },
   },
   parameters: {
     layout: "centered",

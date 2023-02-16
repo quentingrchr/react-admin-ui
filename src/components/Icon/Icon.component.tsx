@@ -11,13 +11,20 @@ export interface IProps {
   color?: ColorStringInterpolation;
   /** Size of the icon */
   size?: keyof typeof theme["icon"]["size"];
+  /** The function to call when the icon is cliked */
+  onClick?: () => void;
 }
 
 /** `Icon` Component to display a specfic icon*/
-const Icon: React.FC<IProps> = ({ icon, color, size = "medium" }) => {
+const Icon: React.FC<IProps> = ({
+  icon,
+  color,
+  size = "medium",
+  onClick = () => {},
+}) => {
   console.log("Icon", icon, color, size);
   return (
-    <Styled.Container color={color} size={size}>
+    <Styled.Container color={color} size={size} onClick={onClick}>
       <IconSelector icon={icon} />
     </Styled.Container>
   );

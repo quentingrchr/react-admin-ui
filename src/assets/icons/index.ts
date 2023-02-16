@@ -6,6 +6,8 @@ import InformationCircleFilled from "./InformationCircleFilled";
 import InformationCircleOutlined from "./InformationCircleOutlined";
 import PhotographFilled from "./PhotographFilled";
 import PhotographOutlined from "./PhotographOutlined";
+import ChevronDownFilled from "./ChevronDownFilled";
+import ChevronDownOutlined from "./ChevronDownOutlined";
 
 export {
   RefreshOutlined,
@@ -16,4 +18,6 @@ export {
   InformationCircleOutlined,
   PhotographFilled,
   PhotographOutlined,
+  ChevronDownFilled,
+  ChevronDownOutlined,
 };

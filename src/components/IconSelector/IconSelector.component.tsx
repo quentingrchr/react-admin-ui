@@ -27,6 +27,10 @@ function selector(icon: IProps["icon"]): ReturnType<React.FC> {
       return <Icons.PhotographFilled />;
     case "photograph-outlined":
       return <Icons.PhotographOutlined />;
+    case "chevron-down-filled":
+      return <Icons.ChevronDownFilled />;
+    case "chevron-down-outlined":
+      return <Icons.ChevronDownOutlined />;
     default:
       throw new Error(`Icon ${icon} not found`);
   }
