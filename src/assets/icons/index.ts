@@ -8,6 +8,8 @@ import PhotographFilled from "./PhotographFilled";
 import PhotographOutlined from "./PhotographOutlined";
 import ChevronDownFilled from "./ChevronDownFilled";
 import ChevronDownOutlined from "./ChevronDownOutlined";
+import CheckOutlined from "./CheckOutlined";
+import CheckFilled from "./CheckFilled";
 
 export {
   RefreshOutlined,
@@ -20,4 +22,6 @@ export {
   PhotographOutlined,
   ChevronDownFilled,
   ChevronDownOutlined,
+  CheckOutlined,
+  CheckFilled,
 };

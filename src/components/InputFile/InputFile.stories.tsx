@@ -19,6 +19,12 @@ export default {
       },
       description: "The HTML accept property (file types)",
     },
+    buttonLabel: {
+      control: {
+        type: "text",
+      },
+      description: "The label of the button",
+    },
     label: {
       description: "The label of the input",
     },
@@ -48,10 +54,11 @@ export const PdfUpload = Template.bind({});
 PdfUpload.args = {
   id: "input-file-pdf",
   accept: ["application/pdf"],
-  label: "Upload a file",
+  label: "File",
   helperText: "PDF up to 10MB",
   maxFileSize: 10000000,
   minFileSize: 0,
+  buttonLabel: "Upload",
   onChange: (file: File) => {
     action("onChange")(file);
   },
@@ -61,10 +68,11 @@ export const ImageUpload = Template.bind({});
 ImageUpload.args = {
   id: "input-file-image",
   accept: ["image/png", "image/jpeg", "image/gif"],
-  label: "Upload a file",
+  label: "Image upload",
   helperText: "PNG, JPG, GIF up to 5MB",
   maxFileSize: 5000000,
   minFileSize: 0,
+  buttonLabel: "Upload",
   onChange: (file: File) => {
     action("onChange")(file);
   },
@@ -75,10 +83,11 @@ export const ImageUploadDisabled = Template.bind({});
 ImageUploadDisabled.args = {
   id: "input-file-image",
   accept: ["image/png", "image/jpeg", "image/gif"],
-  label: "Upload a file",
+  label: "Image upload",
   helperText: "PNG, JPG, GIF up to 5MB",
   maxFileSize: 5000000,
   minFileSize: 0,
+  buttonLabel: "Upload",
   onChange: (file: File) => {
     action("onChange")(file);
   },

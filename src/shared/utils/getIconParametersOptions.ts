@@ -12,5 +12,7 @@ export default function getIconParametersOptions(): IconID[] {
     "photograph-filled",
     "chevron-down-outlined",
     "chevron-down-filled",
+    "check-outlined",
+    "check-filled",
   ];
 }

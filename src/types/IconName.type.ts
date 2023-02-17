@@ -3,6 +3,7 @@ export type IconName =
   | "search"
   | "information-circle"
   | "photograph"
-  | "chevron-down";
+  | "chevron-down"
+  | "check";
 export type IconType = "outlined" | "filled";
 export type IconID = `${IconName}-${IconType}`;

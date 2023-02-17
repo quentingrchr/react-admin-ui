@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useClickOutsideEvent, useToggle } from "../../hooks";
+import { useToggle } from "../../hooks";
+import Checkbox from "../Checkbox";
 import Dropdown from "../Dropdown";
 import Icon from "../Icon";
 import Label from "../Label";
 import Stack from "../Stack";
 import TextField from "../TextField";
-import * as Styled from "./SelectDropdown.style";
+import * as Styled from "./MultiSelectDropdown.style";
+import { useClickOutsideEvent } from "../../hooks";
 
 interface Option {
   id: string;
@@ -49,7 +51,7 @@ const SelectDropdown: React.FC<IProps> = ({
   /** Add search feature in the options list */
   withSearch = false,
 }) => {
-  const [selected, setSelected] = useState<Option | null>(null);
+  const [selected, setSelected] = useState<Option[]>([]);
   const [isOpen, toggleOpen, setIsOpen] = useToggle(false);
   const [search, setSearch] = useState<string>("");
   const containerRef = useRef<HTMLFieldSetElement>(null);
@@ -64,16 +66,23 @@ const SelectDropdown: React.FC<IProps> = ({
     );
   }
 
-  function handleSelect(option: Option | null) {
-    setIsOpen(!isOpen);
-    setSelected(option);
+  function addOption(option: Option) {
+    setSelected([...selected, option]);
   }
 
-  useEffect(() => {
-    if (!onChange) return;
-    const value = selected?.value ?? null;
-    onChange(value);
-  }, [selected, onChange]);
+  function removeOption(option: Option) {
+    setSelected((prev) => prev.filter((item) => item.id !== option.id));
+  }
+
+  function isSelected(option: Option) {
+    return selected.some((item) => item.id === option.id);
+  }
+
+  // useEffect(() => {
+  //   if (!onChange) return;
+  //   const value = selected?.value ?? null;
+  //   onChange(value);
+  // }, [selected, onChange]);
 
   useEffect(() => {
     if (!isOpen) {
@@ -93,7 +102,7 @@ const SelectDropdown: React.FC<IProps> = ({
           <Styled.Select onClick={toggleOpen}>
             <Styled.Input>
               <Styled.Placeholder component="span" variant="body1">
-                {!selected ? placeholder : selected.label}
+                {placeholder}
               </Styled.Placeholder>
               <Styled.IconWrapper isOpen={isOpen}>
                 <Icon
@@ -122,10 +131,24 @@ const SelectDropdown: React.FC<IProps> = ({
             renderItem={(option, Item) => (
               <Item
                 key={option.id}
-                onClick={() => handleSelect(option)}
-                strong={option.id === selected?.id}
+                onClick={() => {
+                  if (isSelected(option)) {
+                    removeOption(option);
+                  } else {
+                    addOption(option);
+                  }
+                }}
+                strong={isSelected(option)}
               >
-                {option.label}
+                <Stack
+                  direction="row"
+                  spacing={6}
+                  align="center"
+                  justify="start"
+                >
+                  <Checkbox value={isSelected(option)} id={option.id} />
+                  <span>{option.label}</span>
+                </Stack>
               </Item>
             )}
             maxHeight={maxHeight}

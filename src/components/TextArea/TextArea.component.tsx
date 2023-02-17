@@ -1,9 +1,12 @@
 import React, { useState, FocusEvent } from "react";
 import * as Styled from "./TextArea.style";
 import { IconID } from "../../types";
-import IconSelector from "../IconSelector";
+import Stack from "../Stack";
+import Label from "../Label";
 
 export interface IProps extends React.HTMLAttributes<HTMLTextAreaElement> {
+  id: string;
+  label?: string;
   disabled?: boolean;
   isInvalid?: boolean;
   isValid?: boolean;
@@ -16,6 +19,10 @@ export interface IProps extends React.HTMLAttributes<HTMLTextAreaElement> {
 
 /** `TextArea` Describe the component */
 const TextArea: React.FC<IProps> = ({
+  /** The id of the input */
+  id,
+  /** Label of the input */
+  label,
   /** Whether the input is valid. */
   isInvalid = false,
   /** Whether the input is invalid. */
@@ -52,24 +59,27 @@ const TextArea: React.FC<IProps> = ({
   };
 
   return (
-    <Styled.InputWrapper
-      isFocused={isFocused}
-      isDisabled={disabled}
-      isInvalid={isInvalid}
-      isValid={isValid}
-    >
-      <Styled.TextArea
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        disabled={disabled}
-        value={value}
-        onChange={handleChange}
-        {...textareaHTMLTagProps}
-        placeholder={placeholder}
+    <Stack direction="column" spacing={6} align="start" justify="start">
+      {label && <Label id={id}>{label}</Label>}
+      <Styled.InputWrapper
+        isFocused={isFocused}
+        isDisabled={disabled}
+        isInvalid={isInvalid}
+        isValid={isValid}
       >
-        {value}
-      </Styled.TextArea>
-    </Styled.InputWrapper>
+        <Styled.TextArea
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          disabled={disabled}
+          value={value}
+          onChange={handleChange}
+          {...textareaHTMLTagProps}
+          placeholder={placeholder}
+        >
+          {value}
+        </Styled.TextArea>
+      </Styled.InputWrapper>
+    </Stack>
   );
 };
 

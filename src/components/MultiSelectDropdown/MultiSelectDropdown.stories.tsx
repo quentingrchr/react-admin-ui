@@ -2,11 +2,11 @@ import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { action } from "@storybook/addon-actions";
 
-import SelectDropdown, { IProps } from "./SelectDropdown.component";
+import MultiSelectDropdown, { IProps } from "./MultiSelectDropdown.component";
 
 export default {
-  title: "Molecules/SelectDropdown",
-  component: SelectDropdown,
+  title: "Molecules/MultiSelectDropdown",
+  component: MultiSelectDropdown,
   argTypes: {
     onChange: {
       action: "onChange",
@@ -18,7 +18,7 @@ export default {
 } as Meta;
 
 const Template: Story<IProps> = (args) => {
-  return <SelectDropdown {...args} />;
+  return <MultiSelectDropdown {...args} />;
 };
 
 export const DefaultWithLabel = Template.bind({});

@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import Typography from "../Typography";
 
 export const Select = styled.div`

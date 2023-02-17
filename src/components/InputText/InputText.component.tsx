@@ -1,6 +1,6 @@
 import React, { useState, FocusEvent } from "react";
 import * as Styled from "./InputText.style";
-import { IconID } from "../../types";
+import { ColorStringInterpolation, IconID } from "../../types";
 import IconSelector from "../IconSelector";
 
 export interface IProps extends React.HTMLAttributes<HTMLInputElement> {
@@ -9,6 +9,7 @@ export interface IProps extends React.HTMLAttributes<HTMLInputElement> {
   error?: boolean;
   success?: boolean;
   icon?: IconID;
+  iconColor?: ColorStringInterpolation;
   value: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
@@ -27,6 +28,8 @@ const InputText: React.FC<IProps> = ({
   disabled = false,
   /** The right side icon to use */
   icon,
+  /** The color of the icon */
+  iconColor = "primary-brand",
   /** The value of the input */
   value,
   /** The function to call when the input changes */
@@ -77,7 +80,11 @@ const InputText: React.FC<IProps> = ({
         {...inputHTMLTagProps}
       />
       {icon !== undefined && (
-        <Styled.IconWrapper onClick={handleIconClick}>
+        <Styled.IconWrapper
+          onClick={handleIconClick}
+          iconColor={iconColor}
+          pointer={onIconClick !== undefined}
+        >
           <IconSelector icon={icon} />
         </Styled.IconWrapper>
       )}

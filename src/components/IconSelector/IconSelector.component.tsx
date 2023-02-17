@@ -31,6 +31,11 @@ function selector(icon: IProps["icon"]): ReturnType<React.FC> {
       return <Icons.ChevronDownFilled />;
     case "chevron-down-outlined":
       return <Icons.ChevronDownOutlined />;
+    case "check-filled":
+      return <Icons.CheckFilled />;
+    case "check-outlined":
+      return <Icons.CheckOutlined />;
+
     default:
       throw new Error(`Icon ${icon} not found`);
   }

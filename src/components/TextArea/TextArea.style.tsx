@@ -13,6 +13,7 @@ export const TextArea = styled.textarea`
   line-height: 24px;
   background-color: transparent;
   min-height: 160px;
+  min-width: 332px;
   font-family: ${({ theme }) => theme.font.family.primary};
   ::placeholder {
     color: ${({ theme }) => theme.colors.secondary.neutral2};
@@ -48,7 +49,7 @@ export const InputWrapper = styled.div<{
   align-items: center;
   border: 1px solid ${({ theme }) => theme.colors.secondary.neutral2};
   border-radius: 8px;
-  min-width: 332px;
+  width: "auto";
   padding: 12px 16px;
   ${({ isFocused }) => isFocused && isFocusedCss}
   ${({ isDisabled }) => isDisabled && isDisableCss}

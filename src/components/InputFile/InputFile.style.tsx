@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { IProps } from "./InputFile.component";
 
-export const Label = styled.label`
+export const Content = styled.span`
   color: ${({ theme }) => theme.colors.primary.brand};
   position: relative;
   &:hover {
@@ -34,8 +34,9 @@ export const Container = styled.div<{ disabled: IProps["disabled"] }>`
   color: ${({ theme }) => theme.colors.secondary.neutral4};
   opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
-
-  ${Label} {
+  box-sizing: border-box;
+  width: 100%;
+  ${Content} {
     &:hover {
       &:after {
         display: ${({ disabled }) => (disabled ? "none" : "block")};

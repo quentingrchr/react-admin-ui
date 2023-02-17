@@ -1,17 +1,18 @@
-import React, { useState, FocusEvent } from "react";
+import React, { useState } from "react";
 import * as Styled from "./InputFile.style";
 import { IconID } from "../../types";
-import IconSelector from "../IconSelector";
 import Stack from "../Stack";
 import Typography from "../Typography";
 import Tooltip from "../Tooltip";
 import { formatBytes } from "../../shared/utils";
 import Icon from "../Icon";
+import Label from "../Label";
 
 export interface IProps {
   id: string;
   accept: string[];
   label?: string;
+  buttonLabel?: string;
   helperText?: string;
   maxFileSize?: number;
   minFileSize?: number;
@@ -26,8 +27,10 @@ const InputFile: React.FC<IProps> = ({
   id = "input-file",
   /** The HTML accept prsoperty (file types) */
   accept = ["image/png", "image/jpeg", "image/gif"],
-  /** The label of the input */
-  label = "Upload a file",
+  /** Label of the input */
+  label,
+  /** The label of the button */
+  buttonLabel = "Upload",
   /** The helper text of the input */
   helperText = "PNG, JPG, GIF up to 5MB",
   /** The max file size in bytes */
@@ -98,37 +101,42 @@ const InputFile: React.FC<IProps> = ({
   };
 
   return (
-    <Styled.Container
-      disabled={disabled}
-      onDrop={handleDrop}
-      onDragOver={(e) => preventDefaultAndStopPropagation(e)}
-      onDragEnter={(e) => preventDefaultAndStopPropagation(e)}
-      onDragLeave={(e) => preventDefaultAndStopPropagation(e)}
-    >
-      <Stack direction="column" align="center" justify="center" spacing={8}>
-        {!!icon && <Icon icon={icon} size="large" color="secondary-neutral2" />}
-        <Styled.MainText>
-          <Typography component="p" variant="body2" weight="semiBold">
-            <Styled.Label htmlFor={id}>{label}</Styled.Label>
-            <input
-              type="file"
-              id={id}
-              hidden
-              accept={accept.toString()}
-              onChange={handleFileChange}
-              disabled={disabled}
-            />
-            <span>&nbsp;</span>
-            <span>or drag and drop</span>
+    <Stack direction="column" spacing={6} align="start" justify="start">
+      {label && <Label id={id}>{label}</Label>}
+      <Styled.Container
+        disabled={disabled}
+        onDrop={handleDrop}
+        onDragOver={(e) => preventDefaultAndStopPropagation(e)}
+        onDragEnter={(e) => preventDefaultAndStopPropagation(e)}
+        onDragLeave={(e) => preventDefaultAndStopPropagation(e)}
+      >
+        <Stack direction="column" align="center" justify="center" spacing={8}>
+          {!!icon && (
+            <Icon icon={icon} size="large" color="secondary-neutral2" />
+          )}
+          <Styled.MainText>
+            <Typography component="p" variant="body2" weight="semiBold">
+              <Styled.Content>{buttonLabel}</Styled.Content>
+              <input
+                type="file"
+                id={id}
+                hidden
+                accept={accept.toString()}
+                onChange={handleFileChange}
+                disabled={disabled}
+              />
+              <span>&nbsp;</span>
+              <span>or drag and drop</span>
+            </Typography>
+          </Styled.MainText>
+          <Typography component="p" variant="body2" weight="regular">
+            {helperText}
           </Typography>
-        </Styled.MainText>
-        <Typography component="p" variant="body2" weight="regular">
-          {helperText}
-        </Typography>
-        {!!error && <Tooltip type="error" text={error} />}
-        {!!succes && <Tooltip type="success" text={succes} />}
-      </Stack>
-    </Styled.Container>
+          {!!error && <Tooltip type="error" text={error} />}
+          {!!succes && <Tooltip type="success" text={succes} />}
+        </Stack>
+      </Styled.Container>
+    </Stack>
   );
 };
 

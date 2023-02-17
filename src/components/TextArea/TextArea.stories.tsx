@@ -1,6 +1,5 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { action } from "@storybook/addon-actions";
 
 import TextArea, { IProps } from "./TextArea.component";
 import { getIconParametersOptions } from "../../shared/utils";
@@ -9,6 +8,19 @@ export default {
   title: "Molecules/TextArea",
   component: TextArea,
   argTypes: {
+    id: {
+      description: "The id of the text area.",
+      control: {
+        type: "text",
+      },
+    },
+    label: {
+      defaultValue: "",
+      description: "The label of the text area.",
+      control: {
+        type: "text",
+      },
+    },
     value: {
       description: "The value of the text area.",
       control: {
@@ -96,4 +108,13 @@ Invalid.args = {
   placeholder: "The value is invalid",
   disabled: false,
   isInvalid: true,
+} as IProps;
+
+export const WithLabel = Template.bind({});
+WithLabel.args = {
+  label: "Label",
+  placeholder: "Enter a value ...",
+  disabled: false,
+  isValid: false,
+  isInvalid: false,
 } as IProps;

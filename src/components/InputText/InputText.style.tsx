@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { selectColorFromColorStringInterpolation } from "../../shared/utils";
 import { IProps } from "./InputText.component";
 
 const isFocusedCss = css`
@@ -20,13 +21,17 @@ export const Input = styled.input`
   }
 `;
 
-export const IconWrapper = styled.div`
-  --__icon-color: ${({ theme }) => theme.colors.primary.brand};
+export const IconWrapper = styled.div<{
+  iconColor: NonNullable<IProps["iconColor"]>;
+  pointer: boolean;
+}>`
+  --__icon-color: ${({ theme, iconColor }) =>
+    selectColorFromColorStringInterpolation(iconColor, theme)};
   --__icon-size: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  cursor: ${({ pointer }) => (pointer ? "pointer" : "default")};
 `;
 
 const isDisableCss = css`
@@ -58,7 +63,8 @@ export const InputWrapper = styled.div<{
   border: 1px solid ${({ theme }) => theme.colors.secondary.neutral2};
   border-radius: 8px;
   padding: 12px 16px;
-  min-width: 332px;
+  width: 100%;
+  /* min-width: 332px; */
   ${({ isFocused }) => isFocused && isFocusedCss}
   ${({ isDisabled }) => isDisabled && isDisableCss}
   ${({ success }) => success && successCss}

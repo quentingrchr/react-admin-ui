@@ -136,5 +136,8 @@ const reset = css`
 const GlobalStyle = createGlobalStyle`
   ${reset}
   ${fonts}
+  * {
+    box-sizing: border-box;
+  }
 `;
 export default GlobalStyle;
