@@ -78,12 +78,6 @@ const SelectDropdown: React.FC<IProps> = ({
     return selected.some((item) => item.id === option.id);
   }
 
-  // useEffect(() => {
-  //   if (!onChange) return;
-  //   const value = selected?.value ?? null;
-  //   onChange(value);
-  // }, [selected, onChange]);
-
   useEffect(() => {
     if (!isOpen) {
       setSearch("");
@@ -146,7 +140,14 @@ const SelectDropdown: React.FC<IProps> = ({
                   align="center"
                   justify="start"
                 >
-                  <Checkbox value={isSelected(option)} id={option.id} />
+                  <Checkbox
+                    checked={isSelected(option)}
+                    onClick={() => {
+                      isSelected(option)
+                        ? removeOption(option)
+                        : addOption(option);
+                    }}
+                  />
                   <span>{option.label}</span>
                 </Stack>
               </Item>

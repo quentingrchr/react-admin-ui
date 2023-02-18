@@ -5,7 +5,7 @@ import Dropdown, { IProps } from "./Dropdown.component";
 import TextField from "../TextField";
 
 export default {
-  title: "Molecules/Dropdown",
+  title: "Molecules/Dropdown/Dropdown",
   component: Dropdown,
   argTypes: {
     isOpen: {
@@ -34,15 +34,15 @@ export default {
     },
     maxHeight: {
       control: {
-        type: "number",
+        type: "string",
       },
-      description: "Max height of the dropdown (in pixels)",
+      description: "Max height of the dropdown",
     },
     maxWidth: {
       control: {
-        type: "number",
+        type: "string",
       },
-      description: "Max width of the dropdown (in pixels)",
+      description: "Max width of the dropdown",
     },
   },
   parameters: {
@@ -192,7 +192,7 @@ const items: IItem[] = [
 export const Default: Story<IProps<IItem>> = (args) => {
   return (
     <Dropdown<IItem>
-      maxHeight={2000}
+      maxHeight={"2000px"}
       isOpen={true}
       renderItem={(item, Item) => (
         <Item key={item.id} strong={item.id === "item1"}>
@@ -207,7 +207,7 @@ export const Default: Story<IProps<IItem>> = (args) => {
 export const WithHeader: Story<IProps<IItem>> = (args) => {
   return (
     <Dropdown<IItem>
-      maxHeight={2000}
+      maxHeight={"2000px"}
       isOpen={true}
       header={
         <TextField
@@ -232,8 +232,8 @@ export const WithHeader: Story<IProps<IItem>> = (args) => {
 export const WithMaxHeightAndMaxWidth: Story<IProps<IItem>> = (args) => {
   return (
     <Dropdown<IItem>
-      maxHeight={150}
-      maxWidth={200}
+      maxHeight={"150px"}
+      maxWidth={"200px"}
       isOpen={true}
       renderItem={(item, Item) => (
         <Item key={item.id} strong={item.id === "item1"}>

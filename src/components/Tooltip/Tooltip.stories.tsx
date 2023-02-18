@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react/types-6-0";
 import Tooltip, { IProps } from "./Tooltip.component";
 
 export default {
-  title: "Molecules/Tooltip",
+  title: "Molecules/Inputs/Tooltip",
   component: Tooltip,
   argTypes: {
     type: {

@@ -6,7 +6,7 @@ import InputText, { IProps } from "./InputText.component";
 import { getIconParametersOptions } from "../../shared/utils";
 
 export default {
-  title: "Molecules/InputText",
+  title: "Molecules/Inputs/InputText",
   component: InputText,
   argTypes: {
     value: {

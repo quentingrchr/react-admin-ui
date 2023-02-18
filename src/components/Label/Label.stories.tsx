@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react/types-6-0";
 import Label, { IProps } from "./Label.component";
 
 export default {
-  title: "Molecules/Label",
+  title: "Atoms/Label",
   component: Label,
   argTypes: {
     id: {

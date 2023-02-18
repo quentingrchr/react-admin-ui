@@ -12,7 +12,7 @@ const variantsParameterOptions: IProps["variant"][] = [
 ];
 
 export default {
-  title: "Molecules/Button",
+  title: "Molecules/CTA/Button",
   component: Button,
   argTypes: {
     variant: {

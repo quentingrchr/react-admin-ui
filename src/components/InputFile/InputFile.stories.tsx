@@ -4,7 +4,7 @@ import { action } from "@storybook/addon-actions";
 import InputFile, { IProps } from "./InputFile.component";
 
 export default {
-  title: "Molecules/InputFile",
+  title: "Molecules/Inputs/InputFile",
   component: InputFile,
   argTypes: {
     id: {

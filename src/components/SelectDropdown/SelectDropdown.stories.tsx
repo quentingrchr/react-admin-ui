@@ -1,11 +1,10 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { action } from "@storybook/addon-actions";
 
 import SelectDropdown, { IProps } from "./SelectDropdown.component";
 
 export default {
-  title: "Molecules/SelectDropdown",
+  title: "Molecules/Dropdown/SelectDropdown",
   component: SelectDropdown,
   argTypes: {
     onChange: {

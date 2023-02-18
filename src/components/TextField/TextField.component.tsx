@@ -1,9 +1,8 @@
 import React from "react";
 import * as Styled from "./TextField.style";
 import Stack from "../Stack";
-import { ColorStringInterpolation, IconID, TooltipType } from "../../types";
+import { ColorStringInterpolation, IconID } from "../../types";
 import InputText from "../InputText";
-import Typography from "../Typography";
 
 import Tooltip from "../Tooltip";
 import Label from "../Label";

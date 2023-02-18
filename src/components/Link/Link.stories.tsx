@@ -1,15 +1,14 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { action } from "@storybook/addon-actions";
 
-import Button, { IProps } from "./Link.component";
+import Link, { IProps } from "./Link.component";
 
 export default {
-  title: "Molecules/Link",
-  component: Button,
+  title: "Molecules/CTA/Link",
+  component: Link,
   argTypes: {
     label: {
-      defaultValue: "Button",
+      defaultValue: "Link",
       description: "The label to use.",
       control: {
         type: "text",
@@ -28,18 +27,18 @@ export default {
   },
 } as Meta;
 
-const Template: Story<IProps> = (args) => <Button {...args} />;
+const Template: Story<IProps> = (args) => <Link {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  label: "Button",
+  label: "Link",
   href: "https://www.google.com",
   target: "_blank",
 } as IProps;
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-  label: "Button",
+  label: "Link",
   href: "https://www.google.com",
   target: "_blank",
   disabled: true,

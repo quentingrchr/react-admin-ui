@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import * as Styled from "./Dropdown.style";
 
 export interface StyledItemProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -32,14 +32,15 @@ const Dropdown = <
     maxHeight = "2000px",
     maxWidth,
   } = props;
-  console.log("render");
-  console.log(maxHeight);
+  const listRef = useRef<HTMLUListElement>(null);
+  const [listRect, setListRect] = useState<DOMRect | null>(null);
+
   return (
     <>
       {isOpen && (
         <Styled.Wrapper maxHeight={maxHeight} maxWidth={maxWidth}>
           {header && <Styled.Header>{header}</Styled.Header>}
-          <Styled.List>
+          <Styled.List ref={listRef}>
             {items.map((item, i) => renderItem(item, Styled.Item))}
           </Styled.List>
         </Styled.Wrapper>

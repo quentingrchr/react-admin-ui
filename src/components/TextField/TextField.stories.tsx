@@ -3,10 +3,9 @@ import { Story, Meta } from "@storybook/react/types-6-0";
 import { action } from "@storybook/addon-actions";
 
 import TextField, { IProps } from "./TextField.component";
-import { getIconParametersOptions } from "../../shared/utils";
 
 export default {
-  title: "Molecules/TextField",
+  title: "Molecules/Inputs/TextField",
   component: TextField,
   argTypes: {},
   parameters: {

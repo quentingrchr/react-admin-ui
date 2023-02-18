@@ -6,17 +6,11 @@ export default {
   title: "Atoms/Checkbox",
   component: Checkbox,
   argTypes: {
-    id: {
+    checked: {
       control: {
-        type: "text",
+        type: "boolean",
       },
-      description: "Id of the label",
-    },
-    label: {
-      control: {
-        type: "text",
-      },
-      description: "Label of the checkbox",
+      description: "Whether the checkbox is checked",
     },
   },
   parameters: {
@@ -25,26 +19,26 @@ export default {
 } as Meta;
 
 const Template: Story<IProps> = (args) => {
-  const [isChecked, setIsChecked] = React.useState(false);
-  const handleChange = (value: boolean) => {
-    setIsChecked(value);
-  };
-  return <Checkbox {...args} onChange={handleChange} value={isChecked} />;
+  return <Checkbox {...args} />;
 };
 
 export const Default = Template.bind({});
-Default.args = {
-  id: "checkbox",
+Default.args = {} as IProps;
+
+export const Checked = Template.bind({});
+Checked.args = {
+  checked: true,
 } as IProps;
 
-export const WithLabel = Template.bind({});
-WithLabel.args = {
-  id: "checkbox",
-  label: "Label",
-} as IProps;
+const ControlledCheckbox: Story<IProps> = (args) => {
+  const [checked, setChecked] = React.useState(false);
+  return (
+    <Checkbox
+      checked={checked}
+      onClick={() => setChecked(!checked)}
+      {...args}
+    />
+  );
+};
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-  id: "checkbox",
-  disabled: true,
-} as IProps;
+export const Controlled = ControlledCheckbox.bind({});

@@ -5,7 +5,7 @@ import TextArea, { IProps } from "./TextArea.component";
 import { getIconParametersOptions } from "../../shared/utils";
 
 export default {
-  title: "Molecules/TextArea",
+  title: "Molecules/Inputs/TextArea",
   component: TextArea,
   argTypes: {
     id: {
