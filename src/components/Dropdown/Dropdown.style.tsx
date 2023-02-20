@@ -58,6 +58,7 @@ export const Wrapper = styled.div<{
   overflow-y: scroll;
   max-width: ${({ maxWidth }) => (maxWidth !== undefined ? maxWidth : "none")};
   width: 100%;
+  display: flex;
   ${Item} {
     max-width: ${({ maxWidth }) =>
       maxWidth !== undefined ? maxWidth : "none"};

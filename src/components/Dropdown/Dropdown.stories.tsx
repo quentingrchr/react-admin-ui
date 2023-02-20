@@ -193,7 +193,7 @@ export const Default: Story<IProps<IItem>> = (args) => {
   return (
     <Dropdown<IItem>
       maxHeight={"2000px"}
-      isOpen={true}
+      isOpen={args.isOpen}
       renderItem={(item, Item) => (
         <Item key={item.id} strong={item.id === "item1"}>
           {item.value}
@@ -208,7 +208,7 @@ export const WithHeader: Story<IProps<IItem>> = (args) => {
   return (
     <Dropdown<IItem>
       maxHeight={"2000px"}
-      isOpen={true}
+      isOpen={args.isOpen}
       header={
         <TextField
           id="search"
@@ -234,7 +234,7 @@ export const WithMaxHeightAndMaxWidth: Story<IProps<IItem>> = (args) => {
     <Dropdown<IItem>
       maxHeight={"150px"}
       maxWidth={"200px"}
-      isOpen={true}
+      isOpen={args.isOpen}
       renderItem={(item, Item) => (
         <Item key={item.id} strong={item.id === "item1"}>
           {item.value}
